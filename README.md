@@ -39,10 +39,23 @@ This project aims for the detecting the barcode in a video and then scanning the
       cv2.drawContours(frame, [box], -1, (0, 255, 0), 2)
     cv2.imshow("Frame", frame)
     key = cv2.waitKey(1) & 0xFF
-
-    # if the 'q' key is pressed, stop the loop
     if key == ord("q"):
       break
     ```
     
-  
+* Last point is if we are not using video file, stop the video file stream using `vs.stop()`, otherwise, release the camera pointer using `vs.release()` for the othercase of using webCam and finally we would be closing all windows by `cv2.destroyAllWindows()`. 
+     ```							
+    if not args.get("video", False):
+	vs.stop()
+    else:
+	vs.release()
+    ```	
+    
+## About Me
+**IF YOU LIKED MY WORK, PLEASE HIT THE STAR BUTTON, AND IF POSSIBLE DO PLEASE SHARE, SO THAT COMMUNITY CAN GET BENIFIT OUT OF IT BEACUSE I AM EXLPANING EACH AND EVERY LINE OF CODE FOR EACH AND EVERY PROJECT OF MINE.**
+
+Also I am Solving **Algorithms and Data Structure Problems from more than 220 Days Without any off-Day and have solved more than 405 Questions on various topics and posting my solutions on Github Daily**. You can Visit my Profile of LeetCode here - **https://leetcode.com/Nisarg1406/**
+
+I am good at Algorithms and Data structure and I have good Projects in Machine learning and Deep Learning (Computer Vision). **I am and would be posting the detialed explantion of each and every project working**. I am activily looking for an Internhip in **Software development enginering (SDE) Domain and Machine learning Domain**.
+
+You can contact me on my mail ID - nisarg.mehta18@vit.edu OR nisargmehta2000@gmail.com and even Contact me on LinkedIn - https://www.linkedin.com/in/nisarg-mehta-4a378a185/  
