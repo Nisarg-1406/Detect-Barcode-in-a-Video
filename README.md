@@ -30,7 +30,7 @@ This project aims for the detecting the barcode in a video and then scanning the
     frame = vs.read()
     frame = frame[1] if args.get("video", False) else frame
     if frame is None:
-		  break
+	break
     ```
   
 * Next is we would find the bounding bax, and if bounding box is found, then to draw the counters. To draw the counters - `cv2.drawContours` function is used. It can also be used to draw any shape provided you have its boundary points. Its first argument is source image, second argument is the contours which should be passed as a Python list, third argument is index of contours (useful when drawing individual contour. To draw all contours, pass -1) and remaining arguments are color, thickness etc. and then we would be showing the frame if the user presses a key, then when `q` is pressed we stop the loop. This can be achieve with - `cv2.waitKey(0) & 0xFF` i.e means `cv2.waitKey()` returns a 32 Bit integer value (might be dependent on the platform). The key input is in ASCII which is an 8 Bit integer value. So you only care about these 8 bits and want all other bits to be 0. For more details for this, you can refer this - `https://stackoverflow.com/questions/35372700/whats-0xff-for-in-cv2-waitkey1`. 
@@ -46,9 +46,9 @@ This project aims for the detecting the barcode in a video and then scanning the
 * Last point is if we are not using video file, stop the video file stream using `vs.stop()`, otherwise, release the camera pointer using `vs.release()` for the othercase of using webCam and finally we would be closing all windows by `cv2.destroyAllWindows()`. 
      ```							
     if not args.get("video", False):
-	vs.stop()
+        vs.stop()
     else:
-	vs.release()
+        vs.release()
     ```	
     
 ## About Me
